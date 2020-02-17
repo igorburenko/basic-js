@@ -1,4 +1,8 @@
-module.exports = function countCats(/* matrix */) {
-  throw 'Not implemented';
-  // remove line with error and write your code here
+module.exports = function countCats(backyard) {
+  let counter = 0,
+      re = /^\^\^$/;
+  for (let row of backyard) {
+    row.forEach(i => re.test(i) && counter++)
+  }
+  return counter;
 };
